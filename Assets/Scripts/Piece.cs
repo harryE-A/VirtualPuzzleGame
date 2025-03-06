@@ -30,15 +30,15 @@ public class Piece : MonoBehaviour
     private void OnMouseDrag() //Moves the object being dragged by setting it's position to where the mouse is relative to the camera
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock Y Axis to 0
 
-        
-        transform.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock vertical
+        //Rotation and Toggling goes here, check for inputs.
     }
-//Tutorial Code End.
+    //Tutorial Code End.
 
 
 
-//Own Code:  
+    //Own Code:  
     private void OnMouseUp()
     {
         Vector3 pieceLocation = transform.position;
@@ -46,6 +46,8 @@ public class Piece : MonoBehaviour
 
         CalculateNewX(pieceLocation, roundedPieceLocation);
         CalculateNewZ(pieceLocation, roundedPieceLocation);
+
+        //Collision detection goes here.
 
         transform.position = new Vector3(newX, 0, newZ); //Set new coordinates
     }
