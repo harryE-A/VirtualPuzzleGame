@@ -2,13 +2,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 /**
  * This script uses code from the following YouTube tutorial - https://www.youtube.com/watch?v=kWRyZ3hb1Vc
  * Specifically for dragging the pieces and working out where they should move relative to the camera.
  * I have adapted the code and added my own sections that interlink to solve my specific technical issues.
  */
 
-//Tutorial Code:
+
 public class Piece : MonoBehaviour
 {           
     private float newX; //Values for X and Z for snapping
@@ -16,11 +17,16 @@ public class Piece : MonoBehaviour
 
     Vector3 mousePos;
 
+    //Input Actions
+    InputAction rotateAction;
+    InputAction toggleAction;
+
+
+    //Tutorial Code:
     private Vector3 GetMousePos() //Get where the mouse is relative to the camera
     {
         return Camera.main.WorldToScreenPoint(transform.position);
     }
-
 
     private void OnMouseDown() //Called when the user clicks on a collider
     {
@@ -31,11 +37,29 @@ public class Piece : MonoBehaviour
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
         transform.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock Y Axis to 0
+        //Tutorial Code End.
 
-        //Rotation and Toggling goes here, check for inputs.
+
+        //Rotation and Toggling Pieces:
+        if(rotateAction.WasPerformedThisFrame())
+        {
+            transform.Rotate(0, 0, 90, Space.Self);
+        }
+
+        if(toggleAction.WasPerformedThisFrame())
+        {
+            Debug.Log("Toggle");
+        }
+
+            
     }
-    //Tutorial Code End.
+    
 
+    private void Start()
+    {
+        rotateAction = InputSystem.actions.FindAction("Rotate");
+        toggleAction = InputSystem.actions.FindAction("Toggle");
+    }
 
 
     //Own Code:  
@@ -53,6 +77,7 @@ public class Piece : MonoBehaviour
     }
 
 
+    //Snapping methods:
     private void CalculateNewX(Vector3 pieceLocation, Vector3 roundedPieceLocation) //Takes the two Vector3 values and returns new value for X
     {
         if (roundedPieceLocation.x % 2 == 0f) //For X: Check if divisible by 2
