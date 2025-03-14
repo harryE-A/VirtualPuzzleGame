@@ -37,11 +37,10 @@ public class Piece : MonoBehaviour
 
     private void OnMouseDrag() //Moves the object being dragged by setting it's position to where the mouse is relative to the camera
     {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
+        transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
         //Tutorial Code End.
 
-        transform.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock Y Axis
-        transform.parent.position = transform.position;
+        transform.parent.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock Y Axis
 
         //Rotation
         if (rotateAction.WasPerformedThisFrame())
