@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 /**
  * This script uses code from the following YouTube tutorial - https://www.youtube.com/watch?v=kWRyZ3hb1Vc
  * Specifically for dragging the pieces and working out where they should move relative to the camera.
@@ -15,12 +16,13 @@ public class Piece : MonoBehaviour
     private float newX; //Values for X and Z for snapping
     private float newZ;
 
-    Vector3 mousePos;
+    Vector3 mousePos; 
 
     //Input Actions
     InputAction rotateAction;
     InputAction toggleAction;
 
+    
 
     //Tutorial Code:
     private Vector3 GetMousePos() //Get where the mouse is relative to the camera
@@ -36,17 +38,20 @@ public class Piece : MonoBehaviour
     private void OnMouseDrag() //Moves the object being dragged by setting it's position to where the mouse is relative to the camera
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
-        transform.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock Y Axis to 0
         //Tutorial Code End.
 
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock Y Axis
+        transform.parent.position = transform.position;
 
-        //Rotation and Toggling Pieces:
-        if(rotateAction.WasPerformedThisFrame())
+        //Rotation
+        if (rotateAction.WasPerformedThisFrame())
         {
-            transform.Rotate(0, 0, 90, Space.Self);
+            GameObject parentObject = transform.parent.gameObject; //Find Parent GameObject
+            parentObject.transform.Rotate(0, 90, 0); //Rotate it
         }
 
-        if(toggleAction.WasPerformedThisFrame())
+        //Toggling (flipping)
+        if (toggleAction.WasPerformedThisFrame())
         {
             Debug.Log("Toggle");
         }
@@ -65,7 +70,7 @@ public class Piece : MonoBehaviour
     //Own Code:  
     private void OnMouseUp()
     {
-        Vector3 pieceLocation = transform.position;
+        Vector3 pieceLocation = transform.parent.position;
         Vector3 roundedPieceLocation = new Vector3(Mathf.Round(pieceLocation.x), 0, Mathf.Round(pieceLocation.z)); //Round to integer
 
         CalculateNewX(pieceLocation, roundedPieceLocation);
@@ -73,7 +78,7 @@ public class Piece : MonoBehaviour
 
         //Collision detection goes here.
 
-        transform.position = new Vector3(newX, 0, newZ); //Set new coordinates
+        transform.parent.position = new Vector3(newX, 0, newZ); //Set new coordinates
     }
 
 
