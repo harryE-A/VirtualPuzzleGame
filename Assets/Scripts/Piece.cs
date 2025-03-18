@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -43,21 +44,24 @@ public class Piece : MonoBehaviour
         transform.parent.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock Y Axis
 
         //Rotation
-        if (rotateAction.WasPerformedThisFrame())
-        {
-            GameObject parentObject = transform.parent.gameObject; //Find Parent GameObject
-            parentObject.transform.Rotate(0, 90, 0); //Rotate it
-        }
+        if (rotateAction.WasPerformedThisFrame()) {RotatePiece();}
 
         //Toggling (flipping)
-        if (toggleAction.WasPerformedThisFrame())
-        {
-            Debug.Log("Toggle");
-        }
-
-            
+        if (toggleAction.WasPerformedThisFrame()) {TogglePiece();}
+   
     }
-    
+
+    private void RotatePiece()
+    {
+        Debug.Log("Rotate");
+        GameObject parentObject = transform.parent.gameObject; //Find Parent GameObject
+        parentObject.transform.Rotate(0, 90, 0); //Rotate it on Y axis by 90 degrees
+    }
+
+    private void TogglePiece()
+    {
+        Debug.Log("Toggle");
+    }
 
     private void Start()
     {
