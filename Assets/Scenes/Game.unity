@@ -2110,6 +2110,7 @@ GameObject:
   - component: {fileID: 1616029352923050066}
   - component: {fileID: 8751578324851351364}
   - component: {fileID: 8751578324851351366}
+  - component: {fileID: 8751578324851351367}
   m_Layer: 0
   m_Name: Red Piece
   m_TagString: Untagged
@@ -3064,6 +3065,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2267269527571904676, guid: f59a5ef1448e1e74faf941846815237e, type: 3}
+--- !u!114 &8751578324851351367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2507946453699795659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0dc16ce8b9298741a140e85b0ded121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 1, y: 2, z: 3}
+  rotation: {x: 0, y: 90, z: 0, w: 0}
 --- !u!1 &9123964468630854985
 GameObject:
   m_ObjectHideFlags: 0
