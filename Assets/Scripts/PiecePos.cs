@@ -1,19 +1,12 @@
 using UnityEngine;
 
+public class PiecePos : MonoBehaviour
+{
+    [SerializeField] Vector3 startPos;
 
-[CreateAssetMenu(fileName = "New PiecePos", menuName = "Scriptable Objects/PiecePos")]
-public class PiecePos : ScriptableObject
-{   
-    [SerializeField] Vector3 position;
-    [SerializeField] Quaternion rotation;
-
-    public void setPos(string pieceName)
+    //Back to start if illegal placement
+    public Vector3 toStartPos()
     {
-        GameObject piece = GameObject.Find(pieceName);
-
-        position = piece.transform.parent.position;
-        rotation = piece.transform.rotation;
-
+        return startPos;
     }
-
 }
