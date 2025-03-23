@@ -17,6 +17,9 @@ public class Piece : MonoBehaviour
     private float newX; //Values for X and Z for snapping
     private float newZ;
 
+    //Which way the piece is flipped:
+    [SerializeField] private bool toggled = false; //True = side with 2 protruding balls. False = 1 protruding
+
     Vector3 mousePos; 
 
     //Input Actions
@@ -55,16 +58,38 @@ public class Piece : MonoBehaviour
     {
         Debug.Log("Rotate");
         GameObject parentObject = transform.parent.gameObject; //Find Parent GameObject
-        parentObject.transform.Rotate(0, 90, 0); //Rotate it on Y axis by 90 degrees
+
+        if(!toggled)
+        {
+            parentObject.transform.Rotate(0, 90, 0); //Rotate it on Y axis by 90 degrees
+        }
+        else 
+        {
+            parentObject.transform.Rotate(90, 0, 0); //Rotate around X axis by 90 degrees
+        }
     }
 
     private void TogglePiece()
     {
         Debug.Log("Toggle");
+        GameObject parentObject = transform.parent.gameObject; //Find Parent GameObject
+
+        toggled = !toggled; //Flip boolean
+
+        if(toggled) //Two Protruding balls
+        {
+            parentObject.transform.rotation = Quaternion.Euler(0,0,90); //Set rotation to 90 on Z axis
+        }
+        else if(!toggled) //One Protruding ball
+        {
+            parentObject.transform.rotation = Quaternion.Euler(0,0,0); //Set rotation to 0 on Z axis
+        }
     }
+
 
     private void Start()
     {
+        //Initialise the inputs.
         rotateAction = InputSystem.actions.FindAction("Rotate");
         toggleAction = InputSystem.actions.FindAction("Toggle");
     }
