@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0dc16ce8b9298741a140e85b0ded121, type: 3}
   m_Name: Red
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  startPos: {x: 0, y: 0, z: 0}

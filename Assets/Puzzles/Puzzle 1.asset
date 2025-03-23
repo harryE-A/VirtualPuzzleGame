@@ -15,7 +15,7 @@ MonoBehaviour:
   puzzleNo: 1
   puzzleType: 0
   startingPieces:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 872e93175628d4641bfdd99f16e1d880, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
