@@ -22,7 +22,6 @@ public class Piece : MonoBehaviour
     //Which way the piece is flipped:
     [SerializeField] private bool toggled = false; //True = side with 2 protruding balls. False = 1 protruding
 
-    private bool dragging; //Is the piece being dragged?
     private bool placed;   //Is the piece on the board already
     private bool locked;   //Is the player allowed to move the piece
 
@@ -50,7 +49,6 @@ public class Piece : MonoBehaviour
 
     private void OnMouseDrag() //Moves the object being dragged by setting it's position to where the mouse is relative to the camera
     {
-        dragging = true;
         transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
     //Tutorial Code End.
         
@@ -79,16 +77,13 @@ public class Piece : MonoBehaviour
         {
             if(!placed) //And is not already placed on the board, e.g. Player is trying to add this piece
             {
-                transform.parent.position = GetComponentInParent<PiecePos>().toStartPos(); //Dont allow, send back to edge of board   
+                transform.parent.position = GetComponentInParent<PiecePos>().ToStartPos(); //Dont allow, send back to edge of board   
             }
             else //Allow the move, set placed to be true
             {
                 placed = true;
             }
         }
-
-
-        dragging = false;
     }
 
     private void OnCollisionEnter(Collision collision)
