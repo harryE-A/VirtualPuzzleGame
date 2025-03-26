@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,6 +10,7 @@ using UnityEngine.UIElements;
  * This script uses code from the following YouTube tutorial - https://www.youtube.com/watch?v=kWRyZ3hb1Vc
  * Specifically for dragging the pieces and working out where they should move relative to the camera.
  * I have adapted the code and added my own sections that interlink to solve my specific technical issues.
+ * 
  * The code has been marked with comments, the rest of this file contains my own code.
  */
 
@@ -73,13 +75,13 @@ public class Piece : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("Collision between" + this.name + " and " + collision.transform.name);
+        Debug.Log("Collision between " + this.name + " and " + collision.transform.name);
 
-        //if(!dragging)
-        //{
-        //    Debug.Log("To start");
-        //    collision.transform.parent.position = collision.transform.GetComponentInParent<PiecePos>().toStartPos();
-        //}
+        if (!dragging)
+        {
+            Debug.Log("To start");
+            collision.transform.parent.position = collision.transform.GetComponentInParent<PiecePos>().toStartPos();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
