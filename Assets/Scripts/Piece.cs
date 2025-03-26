@@ -22,7 +22,11 @@ public class Piece : MonoBehaviour
     //Which way the piece is flipped:
     [SerializeField] private bool toggled = false; //True = side with 2 protruding balls. False = 1 protruding
 
-    private bool dragging;
+    private bool dragging; //Is the piece being dragged?
+    private bool placed;   //Is the piece on the board already
+    private bool locked;   //Is the player allowed to move the piece
+
+    private bool colliding;
 
     Vector3 mousePos; 
 
@@ -70,27 +74,41 @@ public class Piece : MonoBehaviour
 
         transform.parent.position = new Vector3(newX, 0, newZ); //Set new coordinates
 
-        dragging = false; //Collision detection? when letting go? Use bool?
-    }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        Debug.Log("Collision between " + this.name + " and " + collision.transform.name);
-
-        if (!dragging)
+        if(colliding) //If the piece is colliding with another
         {
-            Debug.Log("To start");
-            collision.transform.parent.position = collision.transform.GetComponentInParent<PiecePos>().toStartPos();
+            if(!placed) //And is not already placed on the board, e.g. Player is trying to add this piece
+            {
+                transform.parent.position = GetComponentInParent<PiecePos>().toStartPos(); //Dont allow, send back to edge of board   
+            }
+            else //Allow the move, set placed to be true
+            {
+                placed = true;
+            }
         }
+
+
+        dragging = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Test");
+        colliding = true;
+
+        //Debug.Log("Colliding True for: " + this.name);
     }
 
-   
+    private void OnCollisionStay(Collision collision)
+    {
+        colliding = true;
+        //Debug.Log("Colliding True for: " + this.name);
+    }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        colliding = false;
+        //Debug.Log("Colliding False for: " + this.name);
+    }
 
     private void RotatePiece()
     {
