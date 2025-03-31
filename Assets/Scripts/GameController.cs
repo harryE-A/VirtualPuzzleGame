@@ -24,9 +24,17 @@ public class GameController : MonoBehaviour
 
     public void SaveStartPuzzle()
     {
-        //Get all pieces
-        //To JSON
-        //Write file
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Piece");
+        string test = new string("");
+
+        foreach (var piece in gameObjects)
+        {
+            PiecePos piecePos = piece.GetComponent<PiecePos>();
+
+            string temp = JsonUtility.ToJson(piecePos);
+            test += temp + "\n";
+        }
+            Debug.Log(test);
     }
     public void SaveSolutionPuzzle()
     {

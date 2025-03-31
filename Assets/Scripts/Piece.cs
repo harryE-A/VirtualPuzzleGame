@@ -94,20 +94,16 @@ public class Piece : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         colliding = true;
-
-        //Debug.Log("Colliding True for: " + this.name);
     }
 
     private void OnCollisionStay(Collision collision)
     {
         colliding = true;
-        //Debug.Log("Colliding True for: " + this.name);
     }
 
     private void OnCollisionExit(Collision collision)
     {
         colliding = false;
-        //Debug.Log("Colliding False for: " + this.name);
     }
 
     private void RotatePiece()
