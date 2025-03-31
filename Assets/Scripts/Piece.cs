@@ -24,6 +24,7 @@ public class Piece : MonoBehaviour
 
     private bool placed;   //Is the piece on the board already
     private bool locked;   //Is the player allowed to move the piece
+    private bool dragging; //Is the piece currently being dragged
 
     private bool colliding;
 
@@ -49,6 +50,7 @@ public class Piece : MonoBehaviour
 
     private void OnMouseDrag() //Moves the object being dragged by setting it's position to where the mouse is relative to the camera
     {
+        dragging = true;
         transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
     //Tutorial Code End.
         
@@ -71,17 +73,23 @@ public class Piece : MonoBehaviour
         CalculateNewZ(pieceLocation, roundedPieceLocation);
 
         transform.parent.position = new Vector3(newX, 0, newZ); //Set new coordinates
+        dragging = false;
+    }
 
-
-        if(colliding) //If the piece is colliding with another
+    private void Update()
+    {
+        if(!dragging)
         {
-            if(!placed) //And is not already placed on the board, e.g. Player is trying to add this piece
+            if (colliding) //If the piece is colliding with another
             {
-                transform.parent.position = GetComponentInParent<PiecePos>().ToStartPos(); //Dont allow, send back to edge of board   
-            }
-            else //Allow the move, set placed to be true
-            {
-                placed = true;
+                if (!placed) //And is not already placed on the board, e.g. Player is trying to add this piece
+                {
+                    transform.parent.position = GetComponentInParent<PiecePos>().ToStartPos(); //Dont allow, send back to edge of board   
+                }
+                else //Allow the move, set placed to be true
+                {
+                   placed = true;
+                }
             }
         }
     }

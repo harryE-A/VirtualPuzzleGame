@@ -12,20 +12,14 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        startSaveAction = InputSystem.actions.FindAction("Save Start");
-        startSolutionAction = InputSystem.actions.FindAction("Save Solution");
+        startSaveAction = InputSystem.actions.FindAction("SaveStart");
+        startSolutionAction = InputSystem.actions.FindAction("SaveSolution");
     }
 
     private void Update()
     {
-        if (startSaveAction.WasPerformedThisFrame())
-        {
-            SaveStartPuzzle();
-        }
-        if (startSolutionAction.WasPerformedThisFrame())
-        {
-            SaveSolutionPuzzle();
-        }
+        if (startSaveAction.WasPerformedThisFrame()) {SaveStartPuzzle();}
+        if (startSolutionAction.WasPerformedThisFrame()) {SaveSolutionPuzzle();}
     }
 
     public void SaveStartPuzzle()

@@ -24,18 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Save Solution",
+                    "name": "SaveStart",
                     "type": "Button",
-                    "id": "1f7568de-c514-4d6a-b1d3-9041cbb9bd8f",
+                    "id": "a92dcf82-ca3c-4aab-b7ba-ef68005d182c",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Save Start",
+                    "name": "SaveSolution",
                     "type": "Button",
-                    "id": "0584b649-198b-4c86-a54a-09039c4590cd",
+                    "id": "473859ce-2c52-4a56-8b59-2ba3bdb8b566",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -66,81 +66,26 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Two Modifiers",
-                    "id": "8e028eb5-c75d-467c-836c-ee10fa39f90b",
-                    "path": "TwoModifiers",
+                    "name": "",
+                    "id": "73cfa6de-5ea9-41cd-ad4d-0d49ea1fe737",
+                    "path": "<Keyboard>/leftBracket",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Save Solution",
-                    "isComposite": true,
+                    "action": "SaveStart",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Modifier 1",
-                    "id": "5c5bf5de-d3e9-4412-bc60-6f79cb21fc6c",
-                    "path": "<Keyboard>/ctrl",
+                    "name": "",
+                    "id": "29b47119-b23e-4bd2-a035-d501753ec220",
+                    "path": "<Keyboard>/rightBracket",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Save Solution",
+                    "action": "SaveSolution",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Modifier 2",
-                    "id": "4b8940ef-eb24-4f38-911d-1be6685b9ed0",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Save Solution",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Binding",
-                    "id": "69d43fb8-25e7-41ef-8259-37367c4ae551",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Save Solution",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "One Modifier",
-                    "id": "8cf75cd7-2d5c-453e-abd2-675eb9b18f6b",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Save Start",
-                    "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "9ef80286-45ae-4ae0-add5-14706d4be357",
-                    "path": "<Keyboard>/ctrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Save Start",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "39e2b794-17bb-4f3f-ad80-6fe6bf8f5674",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Save Start",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },
