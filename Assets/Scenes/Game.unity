@@ -129,9 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 49690596}
   - component: {fileID: 49690597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Dark Blue
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 5, y: 0, z: -26}
+  PieceId: 7
 --- !u!1 &53304327
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,9 +257,9 @@ GameObject:
   m_Component:
   - component: {fileID: 77012463}
   - component: {fileID: 77012464}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Red
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 17, y: 0, z: -16}
+  PieceId: 0
 --- !u!1 &77396423
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,9 +547,9 @@ GameObject:
   m_Component:
   - component: {fileID: 201695780}
   - component: {fileID: 201695781}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pink
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,6 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 17, y: 0, z: 0}
+  PieceId: 8
 --- !u!1 &220498393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,9 +1080,9 @@ GameObject:
   m_Component:
   - component: {fileID: 384638819}
   - component: {fileID: 384638820}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lime
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1113,6 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 11, y: 0, z: -27}
+  PieceId: 3
 --- !u!1 &396017008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,9 +1127,9 @@ GameObject:
   m_Component:
   - component: {fileID: 396017009}
   - component: {fileID: 396017010}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Green
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1159,6 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 4, y: 0, z: 8}
+  PieceId: 4
 --- !u!1 &411706451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,9 +1590,9 @@ GameObject:
   m_Component:
   - component: {fileID: 618711376}
   - component: {fileID: 618711377}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Yellow
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1621,6 +1626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 17, y: 0, z: -26}
+  PieceId: 2
 --- !u!1 &653355135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,9 +2285,9 @@ GameObject:
   m_Component:
   - component: {fileID: 909055277}
   - component: {fileID: 909055278}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blue
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2315,6 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 17, y: 0, z: -7}
+  PieceId: 5
 --- !u!1 &915671406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,9 +2737,9 @@ GameObject:
   m_Component:
   - component: {fileID: 983448605}
   - component: {fileID: 983448606}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Purple
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2766,6 +2773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: -26}
+  PieceId: 9
 --- !u!1 &984520573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4294,9 +4302,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1886657732}
   - component: {fileID: 1886657733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Orange
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4330,6 +4338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 15, y: 0, z: 11}
+  PieceId: 1
 --- !u!1 &1893486734
 GameObject:
   m_ObjectHideFlags: 0
@@ -4705,9 +4714,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2107287648}
   - component: {fileID: 2107287649}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light Blue
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4741,6 +4750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 9, y: 0, z: 9}
+  PieceId: 6
 --- !u!1 &2111887851
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,6 +5632,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &5669327818336095036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5755,6 +5768,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &5842126307030941617
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5966,6 +5982,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &6190515137525398350
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6144,6 +6163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &6843793209252312236
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6339,6 +6361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &7331100096090681844
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6521,8 +6546,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.91158104, y: 24.000006, z: 0.40000015}
-  m_Center: {x: -10.14421, y: -8.800003, z: 1.1368754e-14}
+  m_Size: {x: 1.2191706, y: 24.000006, z: 0.2185619}
+  m_Center: {x: -9.990416, y: -8.800003, z: -0.09071915}
 --- !u!65 &7752500186575156518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6542,8 +6567,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5272341, y: 24.000006, z: 0.40000015}
-  m_Center: {x: 2.6363835, y: -8.800003, z: 1.1368754e-14}
+  m_Size: {x: 1.9698849, y: 24.000006, z: 0.40000015}
+  m_Center: {x: 2.4150581, y: -8.800003, z: 1.1368754e-14}
 --- !u!65 &7752500186575156519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6563,8 +6588,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 14, y: 1.2327878, z: 0.40000015}
-  m_Center: {x: -3.5999994, y: -20.183617, z: 5.945282e-14}
+  m_Size: {x: 14, y: 1.3756844, z: 0.40000015}
+  m_Center: {x: -3.5999994, y: -20.112167, z: 5.843747e-14}
 --- !u!65 &7752500186575156520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6584,8 +6609,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 14, y: 1.3933398, z: 0.40000015}
-  m_Center: {x: -3.5999994, y: 2.503333, z: -7.1528e-15}
+  m_Size: {x: 14, y: 1.7181935, z: 0.40000015}
+  m_Center: {x: -3.5999994, y: 2.3409061, z: -4.8445744e-15}
 --- !u!33 &7906976212225560288
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6652,6 +6677,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &7966144518569752615
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6837,6 +6865,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &8357826073104588674
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7028,6 +7059,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &8561790433872923467
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7189,6 +7223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &8751578324851351366
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7380,6 +7417,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggled: 0
+  placed: 0
+  locked: 0
+  dragging: 0
 --- !u!64 &9123964468630854987
 MeshCollider:
   m_ObjectHideFlags: 0
