@@ -24,7 +24,9 @@ public class GameController : MonoBehaviour
 
     public void SaveStartPuzzle()
     {
-
+        //Get all pieces
+        //To JSON
+        //Write file
     }
     public void SaveSolutionPuzzle()
     {
