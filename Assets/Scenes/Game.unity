@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 5, y: 0, z: -26}
-  PieceId: 7
+  pieceId: 8
 --- !u!1 &53304327
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 17, y: 0, z: -16}
-  PieceId: 0
+  pieceId: 1
 --- !u!1 &77396423
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 17, y: 0, z: 0}
-  PieceId: 8
+  pieceId: 9
 --- !u!1 &220498393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 11, y: 0, z: -27}
-  PieceId: 3
+  pieceId: 4
 --- !u!1 &396017008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 4, y: 0, z: 8}
-  PieceId: 4
+  pieceId: 5
 --- !u!1 &411706451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,7 +1626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 17, y: 0, z: -26}
-  PieceId: 2
+  pieceId: 3
 --- !u!1 &653355135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,7 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 17, y: 0, z: -7}
-  PieceId: 5
+  pieceId: 6
 --- !u!1 &915671406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: -26}
-  PieceId: 9
+  pieceId: 10
 --- !u!1 &984520573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4338,7 +4338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 15, y: 0, z: 11}
-  PieceId: 1
+  pieceId: 2
 --- !u!1 &1893486734
 GameObject:
   m_ObjectHideFlags: 0
@@ -4750,7 +4750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 9, y: 0, z: 9}
-  PieceId: 6
+  pieceId: 7
 --- !u!1 &2111887851
 GameObject:
   m_ObjectHideFlags: 0

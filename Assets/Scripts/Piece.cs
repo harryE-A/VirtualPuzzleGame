@@ -87,7 +87,7 @@ public class Piece : MonoBehaviour
         }
         if(!dragging && !colliding)
         {
-            placed = true;
+            placed = true; //The piece must be placed down
         }
     }
 
