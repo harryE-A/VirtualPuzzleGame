@@ -3,18 +3,28 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    private void Level()
+
+    public static int level;
+
+    public void LevelScreen()
     {
         SceneManager.LoadScene("Level Select");
     }
 
-    private void Controls()
+    public void Controls()
     {
         SceneManager.LoadScene("Controls");
     }
 
-    private void Play()
+    public void Play(int x)
     {
+        level = x;
         SceneManager.LoadScene("Game");
     }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
 }
