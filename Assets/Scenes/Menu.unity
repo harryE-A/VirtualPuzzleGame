@@ -576,7 +576,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1677880625}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Level
+        m_MethodName: LevelScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1574,7 +1574,7 @@ Transform:
   m_GameObject: {fileID: 528813311}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4304593, y: 0.56098557, z: -0.4304593, w: 0.56098557}
-  m_LocalPosition: {x: 0, y: 22, z: -10}
+  m_LocalPosition: {x: 2, y: 22, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3143,6 +3143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9341143e2bd8f40bda3306e35b33ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzles:
+  - {fileID: 11400000, guid: 911f14b92482c2c41a048d440906e9b7, type: 2}
 --- !u!4 &1128911756
 Transform:
   m_ObjectHideFlags: 0

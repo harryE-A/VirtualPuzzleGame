@@ -176,12 +176,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Move the pieces using the mouse and left-click to drag. Position them
-    on the board using R to Rotate, and TAB to Flip, and complete the puzzle.
+  m_text: 'Move the pieces using the mouse and left-click to drag. While dragging,
+    use R and TAB to rotate the pieces into place.
 
-    Puzzles
-    range in difficulty, changing which pieces start on the board and can''t be moved.
-    Good Luck!'
+    Puzzles range in difficulty,
+    changing which pieces start on the board and can''t be moved. Good Luck!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

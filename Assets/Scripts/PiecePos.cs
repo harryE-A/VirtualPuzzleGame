@@ -1,14 +1,17 @@
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 public class PiecePos : MonoBehaviour
 {
-    [SerializeField] public Vector3 startPos;
+    [SerializeField] public int pieceId;
 
-    [SerializeField] int pieceId;
+    public Vector3 pos;
+    public Quaternion q;
 
-    //The starting location of the piece in the editor (off the board)
-    public Vector3 ToStartPos()
+    [SerializeField] private Vector3 startPos;
+
+    public Vector3 ToStartPos() //The starting location of the piece (off the board)
     {
         return startPos;
     }
@@ -26,5 +29,12 @@ public class PiecePos : MonoBehaviour
     public int GetId() //Get piece Id
     {
         return pieceId;
+    }
+
+    //Using Awake() rather than Start() means only when scene is loaded, e.g play mode, not in editor.
+    private void Awake() //When scene is loaded, position piece
+    {
+        transform.position = pos;
+        transform.rotation = q;
     }
 }

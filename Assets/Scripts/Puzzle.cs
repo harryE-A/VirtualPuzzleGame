@@ -8,8 +8,7 @@ public class Puzzle : ScriptableObject
     public int puzzleNo;
     public PuzzleType puzzleType;
 
-    public string startFile;
-    public string solutionFile;
+    public TextAsset startFile;
+    public TextAsset solutionFile;
 
-    
 }
