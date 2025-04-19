@@ -43,24 +43,16 @@ public class GameController : MonoBehaviour
                 targetFile = "Assets/Puzzles/error.txt";
                 break;
         }
-
+        
+        //Important that the empty gameobjects that parent the physical pieces have this tag and piecePos script attached
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Piece"); //Get every piece
-        //Important that the empty gameobjects that parent the physical pieces have this tag and piecePos script
 
         StreamWriter sw = new StreamWriter(targetFile); //Open Streamwriter to target
-
-        string pieceInfo = new string("");
 
         foreach (var piece in gameObjects) //For every piece
         {
             PiecePos p = piece.GetComponent<PiecePos>();
-            sw.WriteLine(JsonUtility.ToJson(p)); Debug.Log(JsonUtility.ToJson(p));
-
-            //PiecePos piecePos = piece.GetComponent<PiecePos>(); //Get the piecePos script containing pos and rotation
-
-            //sw.WriteLine(piecePos.GetId()); //Json does not like ints?
-            //sw.WriteLine(JsonUtility.ToJson(piecePos.GetPos()));
-            //sw.WriteLine(JsonUtility.ToJson(piecePos.GetRot()));
+            sw.WriteLine(JsonUtility.ToJson(p)); //Write to file in JSON
         }
         sw.Close(); //Close Streamwriter
     }
