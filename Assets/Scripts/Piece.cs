@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 /**
- * This script uses code from the following YouTube tutorial - https://www.youtube.com/watch?v=kWRyZ3hb1Vc
+ * This script uses some code from the following YouTube tutorial - https://www.youtube.com/watch?v=kWRyZ3hb1Vc
  * Specifically for dragging the pieces and working out where they should move relative to the camera.
  * I have adapted the code and added my own sections that interlink to solve my specific technical issues.
  * 
@@ -33,10 +33,9 @@ public class Piece : MonoBehaviour
     //Input Actions
     InputAction rotateAction;
     InputAction toggleAction;
-
     
 
-    //Tutorial Code:
+    //Tutorial Code Start:
     private Vector3 GetMousePos() //Get where the mouse is relative to the camera
     {
         return Camera.main.WorldToScreenPoint(transform.position);
@@ -75,6 +74,9 @@ public class Piece : MonoBehaviour
         CalculateNewZ(pieceLocation, roundedPieceLocation);
 
         transform.parent.position = new Vector3(newX, 0, newZ); //Set new coordinates
+
+        //Update the PiecePos script
+        GetComponentInParent<PiecePos>().SetPosRot();
 
         dragging = false;
     }
@@ -127,8 +129,9 @@ public class Piece : MonoBehaviour
         GameObject parentObject = transform.parent.gameObject; //Find Parent GameObject
 
         toggled = !toggled; //Flip boolean
+        GetComponentInParent<PiecePos>().SetToggled(toggled); //Update the PiecePos script
 
-        if(toggled) //Two Protruding balls
+        if (toggled) //Two Protruding balls
         {
             parentObject.transform.rotation = Quaternion.Euler(0,0,90); //Set rotation to 90 on Z axis
         }
@@ -179,5 +182,11 @@ public class Piece : MonoBehaviour
             if (pieceLocation.z > midPoint) { newZ = lowerBound; }
             else { newZ = upperBound; }
         }
+    }
+
+    //Setter for toggled
+    public void SetToggled(bool t)
+    {
+        toggled = t;
     }
 }

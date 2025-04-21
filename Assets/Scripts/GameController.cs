@@ -19,6 +19,12 @@ public class GameController : MonoBehaviour
     {
         startSaveAction = InputSystem.actions.FindAction("SaveStart");
         startSolutionAction = InputSystem.actions.FindAction("SaveSolution");
+
+        int level = UIManager.level;
+        if(level != 0)
+        {
+          LoadPuzzle(level);
+        }
     }
 
     private void Update()
@@ -57,41 +63,26 @@ public class GameController : MonoBehaviour
         sw.Close(); //Close Streamwriter
     }
 
-    private void Awake() //When the Game scene is loaded, also setup the puzzle picked in level select screen.
-    {
-        int level = UIManager.level;
-        //LoadPuzzle(level);
-    }
-
     public void LoadPuzzle(int levelID)
     {
         Debug.Log(levelID);
 
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Piece"); //Get every piece
 
-        string targetFile = "Assets/Puzzles/startPos-" + levelID + ".txt"; //HERE
+        string targetFile = "Assets/Puzzles/startPos-" + levelID + ".txt";
         StreamReader sr = new StreamReader(targetFile);
-
-        //GameObject pieceToEdit;
 
         foreach (var piece in gameObjects) //For every piece
         {
-            string pieceID = sr.ReadLine(); //Get id
-            //foreach (var p in gameObjects) //Find gameobject with same id
-            //{
-            //    if (p.GetComponent<PiecePos>().GetId().ToString() == pieceID)
-            //    {
-            //        pieceToEdit = p;
-            //        break;
-            //    }
-            //}
+            string json = sr.ReadLine();
+            PiecePos pieceToEdit = piece.GetComponent<PiecePos>();
 
-            string xyz = sr.ReadLine();
-            string q = sr.ReadLine();
+            JsonUtility.FromJsonOverwrite(json, pieceToEdit);
+            pieceToEdit.Apply();
 
-            JsonUtility.FromJsonOverwrite(xyz, piece.GetComponent<PiecePos>());
-            //JsonUtility.FromJsonOverwrite(q, piece);
         }
+
+        sr.Close();
     }
 
 }

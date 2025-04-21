@@ -1,40 +1,38 @@
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PiecePos : MonoBehaviour
 {
     [SerializeField] public int pieceId;
+    [SerializeField] private Vector3 startPos;
 
     public Vector3 pos;
     public Quaternion q;
+    public bool isToggled;
 
-    [SerializeField] private Vector3 startPos;
 
-    public Vector3 ToStartPos() //The starting location of the piece (off the board)
+    public Vector3 ToStartPos() //For returning pieces to their starting location (off the board)
     {
         return startPos;
     }
 
-    public Vector3 GetPos() //Returns the current pos
+    public void SetPosRot() //Set the internal values to the values held within the transform component
     {
-        return transform.position;
+        pos = transform.position;
+        q = transform.rotation;
     }
 
-    public Quaternion GetRot() //Returns current rotation
+    public void SetToggled(bool t) //Set toggled
     {
-        return transform.rotation;
+        isToggled = t;
     }
 
-    public int GetId() //Get piece Id
-    {
-        return pieceId;
-    }
-
-    //Using Awake() rather than Start() means only when scene is loaded, e.g play mode, not in editor.
-    private void Awake() //When scene is loaded, position piece
+    public void Apply() //Apply internal values back to transform component and piece script
     {
         transform.position = pos;
         transform.rotation = q;
+        GetComponentInChildren<Piece>().SetToggled(isToggled);
     }
 }
