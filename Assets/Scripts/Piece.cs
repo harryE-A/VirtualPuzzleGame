@@ -22,11 +22,13 @@ public class Piece : MonoBehaviour
     //Which way the piece is flipped:
     [SerializeField] private bool toggled = false; //True = side with 2 protruding balls. False = 1 protruding
 
-    [SerializeField] private bool placed;   //Is the piece on the board already
+    //Is the piece on the board already, stops pieces from displacing others when moving through them while dragging
+    [SerializeField] private bool placed;   
+
     [SerializeField] private bool locked;   //Is the player allowed to move the piece
     [SerializeField] private bool dragging; //Is the piece currently being dragged
 
-    private bool colliding;
+    [SerializeField] private bool colliding;
 
     Vector3 mousePos; 
 
@@ -85,7 +87,7 @@ public class Piece : MonoBehaviour
     {
         if(!dragging && colliding && !placed) 
         {
-            transform.parent.position = GetComponentInParent<PiecePos>().ToStartPos(); //Dont allow, send back to edge of board   
+            transform.parent.position = GetComponentInParent<PiecePos>().GetStartPos(); //Dont allow, send back to edge of board   
         }
         if(!dragging && !colliding)
         {
@@ -101,6 +103,27 @@ public class Piece : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         colliding = true;
+
+        //Bug Fix (moving mouse too quickly and stop dragging can allow pieces to be placed inside one another)
+        //NEEDS EDITING WHEN ADDING LOCKING
+
+        //Two pieces
+        try { 
+            Piece p = collision.gameObject.GetComponent<Piece>(); 
+            if((placed && colliding && !dragging) && (p.placed && p.colliding && !p.dragging))
+            {
+                Debug.Log("Error Case: Two Pieces");
+                transform.parent.position = GetComponentInParent<PiecePos>().GetStartPos();
+            }
+        }
+        //A piece and the board edge
+        catch {
+            if((placed && colliding && !dragging) && collision.gameObject.CompareTag("Board"))
+            {
+                Debug.Log("Error Case: Board Edge");
+                transform.parent.position = GetComponentInParent<PiecePos>().GetStartPos();
+            }
+        }
     }
 
     private void OnCollisionExit(Collision collision)

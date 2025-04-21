@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class GridPoint : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Touching", collision.gameObject);
+    [SerializeField] public bool filled; //Is this specific point on the grid filled?
 
-        this.name = collision.gameObject.name;
+    private void OnTriggerEnter(Collider other)
+    {
+        filled = true;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Touching: {0}", collision.gameObject);
-        this.name = "Point";
+        filled = false;
     }
 }

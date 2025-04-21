@@ -13,7 +13,7 @@ public class PiecePos : MonoBehaviour
     public bool isToggled;
 
 
-    public Vector3 ToStartPos() //For returning pieces to their starting location (off the board)
+    public Vector3 GetStartPos() //For returning pieces to their starting location (off the board)
     {
         return startPos;
     }
