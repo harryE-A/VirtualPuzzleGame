@@ -4220,6 +4220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzles:
   - {fileID: 11400000, guid: 911f14b92482c2c41a048d440906e9b7, type: 2}
+  - {fileID: 11400000, guid: d65f4d8ddd7be68469aacb21f2a7eeab, type: 2}
+  - {fileID: 11400000, guid: ba3eddd1b6f8f6345a1c0587d796798f, type: 2}
+  - {fileID: 11400000, guid: 7e5efe76ccf1cab4ca3d51820ca7aad6, type: 2}
   victoryText: {fileID: 141718465}
 --- !u!4 &1128911756
 Transform:

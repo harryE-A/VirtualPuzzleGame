@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c149bd0992df6b142a02fa67063b73a6, type: 3}
   m_Name: Puzzle 3
   m_EditorClassIdentifier: 
-  puzzleNo: 0
+  puzzleNo: 3
   puzzleType: 0
-  startFile: {fileID: 0}
+  startFile: {fileID: 4900000, guid: f8ab6520c5c43b44c9b6e22f97f8e97a, type: 3}
   solutionFile: {fileID: 0}
