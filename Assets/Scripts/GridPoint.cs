@@ -9,6 +9,11 @@ public class GridPoint : MonoBehaviour
         filled = true;
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        filled = true;
+    }
+
     private void OnTriggerExit(Collider other)
     {
         filled = false;

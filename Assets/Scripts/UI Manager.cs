@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void Back()
+    public void BackToMenu()
     {
         SceneManager.LoadScene("Menu");
     }

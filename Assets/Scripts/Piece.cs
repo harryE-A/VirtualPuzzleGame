@@ -25,12 +25,14 @@ public class Piece : MonoBehaviour
     //Is the piece on the board already, stops pieces from displacing others when moving through them while dragging
     [SerializeField] private bool placed;   
 
-    [SerializeField] private bool locked;   //Is the player allowed to move the piece
-    [SerializeField] private bool dragging; //Is the piece currently being dragged
+    [SerializeField] private bool locked;   //Is the player not allowed to move the piece? 
+    [SerializeField] private bool dragging; //Is the piece currently being dragged?
 
-    [SerializeField] private bool colliding;
+    [SerializeField] private bool colliding; //Is the piece colliding with another?
 
-    Vector3 mousePos; 
+    Vector3 mousePos;
+
+    [SerializeField] GameController gameController; //GameController reference
 
     //Input Actions
     InputAction rotateAction;
@@ -81,6 +83,9 @@ public class Piece : MonoBehaviour
         GetComponentInParent<PiecePos>().SetPosRot();
 
         dragging = false;
+
+        //Check if the puzzle has been completed
+        gameController.CheckPuzzle();
     }
 
     private void Update()

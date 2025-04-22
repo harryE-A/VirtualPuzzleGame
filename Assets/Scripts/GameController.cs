@@ -1,7 +1,10 @@
+using JetBrains.Annotations;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
+using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,17 +16,23 @@ public class GameController : MonoBehaviour
     InputAction startSolutionAction;
     public enum saveType {start, solution}
 
+    //List of all Puzzle scriptable objects
     [SerializeField] public Puzzle[] puzzles;
+
+    //Text to be displayed when the player wins.
+    [SerializeField] GameObject victoryText; 
+
+    int levelID; //The current level
 
     private void Start()
     {
         startSaveAction = InputSystem.actions.FindAction("SaveStart");
         startSolutionAction = InputSystem.actions.FindAction("SaveSolution");
 
-        int level = UIManager.level;
-        if(level != 0)
+        levelID = UIManager.level;
+        if(levelID != 0)
         {
-          LoadPuzzle(level);
+          LoadPuzzle(levelID);
         }
     }
 
@@ -31,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         if (startSaveAction.WasPerformedThisFrame()) {SavePuzzle(saveType.start);}
         if (startSolutionAction.WasPerformedThisFrame()) {SavePuzzle(saveType.solution);}
+        //RESET PUZZLE
     }
 
     public void SavePuzzle(saveType s)
@@ -67,12 +77,12 @@ public class GameController : MonoBehaviour
     {
         Debug.Log(levelID);
 
-        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Piece"); //Get every piece
+        GameObject[] pieces = GameObject.FindGameObjectsWithTag("Piece"); //Get every piece
 
         string targetFile = "Assets/Puzzles/startPos-" + levelID + ".txt";
         StreamReader sr = new StreamReader(targetFile);
 
-        foreach (var piece in gameObjects) //For every piece
+        foreach (var piece in pieces) //For every piece
         {
             string json = sr.ReadLine();
             PiecePos pieceToEdit = piece.GetComponent<PiecePos>();
@@ -82,7 +92,42 @@ public class GameController : MonoBehaviour
 
         }
 
-        sr.Close();
+        sr.Close(); //Close Streamreader
+
+        SetLevelText(); //Set the Canvas text to display level + difficulty
     }
 
+    public void CheckPuzzle()
+    {
+        if (CheckGridPoints()) //Puzzle Solved
+        {
+            victoryText.SetActive(true);
+        }
+        else  //Unsolved
+        {
+            victoryText.SetActive(false);
+        }
+    }
+
+    public bool CheckGridPoints()
+    {
+        GameObject[] gridPoints = GameObject.FindGameObjectsWithTag("GridPoint");
+
+        foreach (var point in gridPoints)
+        {
+            if (!point.GetComponent<GridPoint>().filled)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void SetLevelText()
+    {
+        Puzzle currentPuzzle = puzzles[levelID - 1];
+
+        TMP_Text text = GameObject.Find("Level Text").GetComponent<TMP_Text>();
+        text.text = "Level " + levelID + " - " + currentPuzzle.puzzleType;
+    }
 }
