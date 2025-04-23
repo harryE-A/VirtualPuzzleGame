@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
         if (startSaveAction.WasPerformedThisFrame()) {SavePuzzle(saveType.start);}
         if (startSolutionAction.WasPerformedThisFrame()) {SavePuzzle(saveType.solution);}
         //RESET PUZZLE
+
     }
 
     public void SavePuzzle(saveType s)
@@ -127,7 +128,7 @@ public class GameController : MonoBehaviour
 
     public void SetLevelText()
     {
-        Puzzle currentPuzzle = puzzles[levelID - 1];
+        Puzzle currentPuzzle = puzzles[levelID];
 
         TMP_Text text = GameObject.Find("Level Text").GetComponent<TMP_Text>();
         text.text = "Level " + levelID + " - " + currentPuzzle.puzzleType;
