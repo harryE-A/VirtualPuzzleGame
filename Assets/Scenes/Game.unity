@@ -4368,6 +4368,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d65f4d8ddd7be68469aacb21f2a7eeab, type: 2}
   - {fileID: 11400000, guid: ba3eddd1b6f8f6345a1c0587d796798f, type: 2}
   - {fileID: 11400000, guid: 7e5efe76ccf1cab4ca3d51820ca7aad6, type: 2}
+  - {fileID: 11400000, guid: d35ad1f60f9d13c4ea2786edc5f84615, type: 2}
+  - {fileID: 11400000, guid: d83efcfe6a8ff4044a13170b95ea97a8, type: 2}
+  - {fileID: 11400000, guid: 4eb4ae920b240074ebc3a4a1d40afba7, type: 2}
+  - {fileID: 11400000, guid: 5bba8085676b01841a0cf75ef55a668e, type: 2}
+  - {fileID: 11400000, guid: 3864ba70ef5f3cc458cb62a0d9c77bd5, type: 2}
+  - {fileID: 11400000, guid: 93024a6b5dc446d47b003fd2d95ab2cd, type: 2}
+  - {fileID: 11400000, guid: bb97b5e7b6662a44cb2b40120b61d77d, type: 2}
+  - {fileID: 11400000, guid: 20a7215c3ea53814cb5c305e57686dc6, type: 2}
   victoryText: {fileID: 141718465}
   helpMessage: {fileID: 729758037}
 --- !u!4 &1128911756
