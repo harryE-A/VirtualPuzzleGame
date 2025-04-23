@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -11,13 +12,14 @@ using UnityEngine.UIElements;
  * Specifically for dragging the pieces and working out where they should move relative to the camera.
  * I have adapted the code and added my own sections that interlink to solve my specific technical issues.
  * 
- * The code has been marked with comments, the rest of this file contains my own code.
+ * The code has been marked with comments, the majority of this file contains my own code.
  */
 
 public class Piece : MonoBehaviour
 {           
     private float newX; //Values for X and Z for snapping
     private float newZ;
+    Vector3 mousePos;
 
     //Which way the piece is flipped:
     [SerializeField] private bool toggled = false; //True = side with 2 protruding balls. False = 1 protruding
@@ -30,67 +32,85 @@ public class Piece : MonoBehaviour
 
     [SerializeField] private bool colliding; //Is the piece colliding with another?
 
-    Vector3 mousePos;
+    [SerializeField] private string colour; //The colour of this piece, for the text help messages.
 
-    [SerializeField] GameController gameController; //GameController reference
 
-    //Input Actions
+    [SerializeField] GameController gameController; //Reference to the single instance of the gamecontroller.
+
+    //Input Actions:
     InputAction rotateAction;
     InputAction toggleAction;
-    
 
-    //Tutorial Code Start:
+    //*Tutorial Code Start:*
     private Vector3 GetMousePos() //Get where the mouse is relative to the camera
     {
-        return Camera.main.WorldToScreenPoint(transform.position);
-    }
+        return Camera.main.WorldToScreenPoint(transform.position); 
+    } //*End*
 
     private void OnMouseDown() //Called when the user clicks on a collider
     {
-        mousePos = Input.mousePosition - GetMousePos();
+        if (!locked)
+        {
+            gameController.helpMessage.SetActive(false);
+            mousePos = Input.mousePosition - GetMousePos(); //This line uses Tutorial Code
+        }
+
+        if(locked)
+        {
+            gameController.helpMessage.SetActive(true);
+            TMP_Text helpText = gameController.helpMessage.GetComponent<TMP_Text>();
+
+            helpText.text = "The " + colour + " Piece can't be moved for this level.";
+        }
         
     }
 
     private void OnMouseDrag() //Moves the object being dragged by setting it's position to where the mouse is relative to the camera
     {
-        dragging = true;
-        placed = false;
+        if(!locked)
+        {
+            dragging = true;
+            placed = false;
 
-        transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
-    //Tutorial Code End.
-        
-        transform.parent.position = new Vector3(transform.position.x, 0, transform.position.z); //Lock Y Axis
-        
-        //Rotation
-        if (rotateAction.WasPerformedThisFrame()) {RotatePiece();}
+            transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos); //This line uses Tutorial Code
 
-        //Toggling (flipping)
-        if (toggleAction.WasPerformedThisFrame()) {TogglePiece();}
+            //Lock Y Axis so pieces don't clip below the board
+            transform.parent.position = new Vector3(transform.position.x, 0, transform.position.z); 
+        
+            //Rotation
+            if (rotateAction.WasPerformedThisFrame()) {RotatePiece();}
+
+            //Toggling (flipping)
+            if (toggleAction.WasPerformedThisFrame()) {TogglePiece();}
+        }
    
     }
 
     private void OnMouseUp()
     {
-        Vector3 pieceLocation = transform.parent.position;
-        Vector3 roundedPieceLocation = new Vector3(Mathf.Round(pieceLocation.x), 0, Mathf.Round(pieceLocation.z)); //Round to integer
+        if(!locked)
+        {
+            Vector3 pieceLocation = transform.parent.position;
+            Vector3 roundedPieceLocation = new Vector3(Mathf.Round(pieceLocation.x), 0, Mathf.Round(pieceLocation.z)); //Round to integer
 
-        CalculateNewX(pieceLocation, roundedPieceLocation);
-        CalculateNewZ(pieceLocation, roundedPieceLocation);
+            CalculateNewX(pieceLocation, roundedPieceLocation);
+            CalculateNewZ(pieceLocation, roundedPieceLocation);
 
-        transform.parent.position = new Vector3(newX, 0, newZ); //Set new coordinates
+            transform.parent.position = new Vector3(newX, 0, newZ); //Set new coordinates
 
-        //Update the PiecePos script
-        GetComponentInParent<PiecePos>().SetPosRot();
+            //Update the PiecePos script
+            GetComponentInParent<PiecePos>().SetPosRot();
 
-        dragging = false;
+            dragging = false;
 
-        //Check if the puzzle has been completed
-        gameController.CheckPuzzle();
+            //Check if the puzzle has been completed
+            gameController.CheckPuzzle();
+        }
     }
 
     private void Update()
     {
-        if(!dragging && colliding && !placed) 
+        if (!dragging && colliding && !placed && !locked) 
         {
             transform.parent.position = GetComponentInParent<PiecePos>().GetStartPos(); //Dont allow, send back to edge of board   
         }
@@ -118,7 +138,10 @@ public class Piece : MonoBehaviour
             if((placed && colliding && !dragging) && (p.placed && p.colliding && !p.dragging))
             {
                 Debug.Log("Error Case: Two Pieces");
-                transform.parent.position = GetComponentInParent<PiecePos>().GetStartPos();
+                if(!locked) //The piece shouldn't move if it's locked.
+                {
+                    transform.parent.position = GetComponentInParent<PiecePos>().GetStartPos();
+                }
             }
         }
         //A piece and the board edge
@@ -216,5 +239,11 @@ public class Piece : MonoBehaviour
     public void SetToggled(bool t)
     {
         toggled = t;
+    }
+
+    //Setter for locked
+    public void SetLocked(bool l)
+    {
+        locked = l;
     }
 }

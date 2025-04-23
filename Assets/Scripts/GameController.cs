@@ -20,7 +20,9 @@ public class GameController : MonoBehaviour
     [SerializeField] public Puzzle[] puzzles;
 
     //Text to be displayed when the player wins.
-    [SerializeField] GameObject victoryText; 
+    [SerializeField] public GameObject victoryText;
+    //Text to be displayed to give the player some help
+    [SerializeField] public GameObject helpMessage;
 
     int levelID; //The current level
 

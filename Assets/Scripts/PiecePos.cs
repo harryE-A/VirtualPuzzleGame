@@ -11,7 +11,7 @@ public class PiecePos : MonoBehaviour
     public Vector3 pos;
     public Quaternion q;
     public bool isToggled;
-
+    public bool isLocked;
 
     public Vector3 GetStartPos() //For returning pieces to their starting location (off the board)
     {
@@ -34,5 +34,7 @@ public class PiecePos : MonoBehaviour
         transform.position = pos;
         transform.rotation = q;
         GetComponentInChildren<Piece>().SetToggled(isToggled);
+        GetComponentInChildren<Piece>().SetLocked(isLocked);
+
     }
 }
