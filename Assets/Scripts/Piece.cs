@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 /**
- * This script uses some code from the following YouTube tutorial - https://www.youtube.com/watch?v=kWRyZ3hb1Vc
+ * This script uses some code from the following YouTube tutorial - https://www.youtube.com/watch?v=axW46wCJxZ0
  * Specifically for dragging the pieces and working out where they should move relative to the camera.
  * I have adapted the code and added my own sections that interlink to solve my specific technical issues.
  * 
