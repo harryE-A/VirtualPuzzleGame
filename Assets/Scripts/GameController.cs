@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
