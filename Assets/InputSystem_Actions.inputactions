@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Toggle",
+                    "name": "Flip",
                     "type": "Button",
                     "id": "da8387b2-1fca-4aec-98dd-92bbc26d04f1",
                     "expectedControlType": "",
@@ -57,11 +57,11 @@
                 {
                     "name": "",
                     "id": "36d68fcc-8564-4ccf-b20f-9703f7bda5bb",
-                    "path": "<Keyboard>/tab",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Toggle",
+                    "action": "Flip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

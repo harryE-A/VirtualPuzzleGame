@@ -39,7 +39,7 @@ public class Piece : MonoBehaviour
 
     //Input Actions:
     InputAction rotateAction;
-    InputAction toggleAction;
+    InputAction flipAction;
 
     //*Tutorial Code Start:*
     private Vector3 GetMousePos() //Get where the mouse is relative to the camera
@@ -81,7 +81,7 @@ public class Piece : MonoBehaviour
             if (rotateAction.WasPerformedThisFrame()) {RotatePiece();}
 
             //Toggling (flipping)
-            if (toggleAction.WasPerformedThisFrame()) {TogglePiece();}
+            if (flipAction.WasPerformedThisFrame()) {TogglePiece();}
         }
    
     }
@@ -196,7 +196,7 @@ public class Piece : MonoBehaviour
     {
         //Initialise inputs
         rotateAction = InputSystem.actions.FindAction("Rotate");
-        toggleAction = InputSystem.actions.FindAction("Toggle");
+        flipAction = InputSystem.actions.FindAction("Flip");
     }
 
     //Snapping methods:
