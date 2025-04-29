@@ -75,7 +75,7 @@ public class Piece : MonoBehaviour
             transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos); //This line uses Tutorial Code
 
             //Lock Y Axis so pieces don't clip below the board
-            transform.parent.position = new Vector3(transform.position.x, 0, transform.position.z); 
+            transform.parent.position = new Vector3(transform.parent.position.x, 0, transform.parent.position.z); 
         
             //Rotation
             if (rotateAction.WasPerformedThisFrame()) {RotatePiece();}
