@@ -4425,6 +4425,66 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d959fe506199d64d87dad0964868d8d, type: 2}
   - {fileID: 11400000, guid: 546022931c175884e9402bcfa076dfa3, type: 2}
   - {fileID: 11400000, guid: b3ca025ad9f794a449e9c03509b04cb7, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 02869b1aca8247d4eafe5d38ccd5f9c5, type: 2}
+  - {fileID: 11400000, guid: 78c5be54b6cc4b94ea802b0eb91411e6, type: 2}
+  - {fileID: 11400000, guid: d873b0ee2c5fe6342a6b7937cf49f8a7, type: 2}
+  - {fileID: 11400000, guid: aabdf77fd4ad6134eb8840331985c609, type: 2}
+  - {fileID: 11400000, guid: 9fd55421f2a2fcf439a687d25b32c973, type: 2}
+  - {fileID: 11400000, guid: 03be93f6d1aa95542a5238ed6dee7991, type: 2}
+  - {fileID: 11400000, guid: 0a8ab0b49c3d2eb40af22c2b1ed80dc0, type: 2}
+  - {fileID: 11400000, guid: 2aead668dcd9a4148bd8c6f0ee82282e, type: 2}
+  - {fileID: 11400000, guid: bf4568f3750dc4249af0ebfc31188f0f, type: 2}
+  - {fileID: 11400000, guid: 98b16ecb49331014cb811ac47e4b23af, type: 2}
+  - {fileID: 11400000, guid: 37b645defd69f3d4c89833479bdf258b, type: 2}
+  - {fileID: 11400000, guid: f1578165fcd130747a2367b6f4e72e81, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   victoryText: {fileID: 141718465}
   helpMessage: {fileID: 729758037}
 --- !u!4 &1128911756
