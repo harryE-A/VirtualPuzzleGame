@@ -208,10 +208,10 @@ public class Piece : MonoBehaviour
         }
         else //Odd number
         {
-            float lowerBound = roundedPieceLocation.x - 1;
-            float upperBound = roundedPieceLocation.x + 1;
+            float lowerBound = roundedPieceLocation.x - 1; 
+            float upperBound = roundedPieceLocation.x + 1; 
 
-            float midPoint = lowerBound + upperBound / 2;
+            float midPoint = (lowerBound + upperBound) / 2;
 
             if (pieceLocation.x > midPoint) { newX = upperBound; }
             else { newX = lowerBound; }
@@ -228,7 +228,7 @@ public class Piece : MonoBehaviour
             float lowerBound = roundedPieceLocation.z - 1;
             float upperBound = roundedPieceLocation.z + 1;
 
-            float midPoint = lowerBound + upperBound / 2;
+            float midPoint = (lowerBound + upperBound) / 2;
 
             if (pieceLocation.z > midPoint) { newZ = upperBound; }
             else { newZ = lowerBound; }
