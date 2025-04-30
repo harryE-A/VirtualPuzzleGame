@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleNo: 81
   puzzleType: 3
-  startFile: {fileID: 4900000, guid: 370217fd79fe2164d96e7ef114a1a7fc, type: 3}
+  startFile: {fileID: 4900000, guid: 71bb404cee915ca478dc10f28aff4449, type: 3}
   solutionFile: {fileID: 0}
