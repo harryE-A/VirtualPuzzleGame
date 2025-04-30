@@ -213,8 +213,8 @@ public class Piece : MonoBehaviour
 
             float midPoint = lowerBound + upperBound / 2;
 
-            if (pieceLocation.x > midPoint) { newX = lowerBound; }
-            else { newX = upperBound; }
+            if (pieceLocation.x > midPoint) { newX = upperBound; }
+            else { newX = lowerBound; }
         }
     }
     private void CalculateNewZ(Vector3 pieceLocation, Vector3 roundedPieceLocation)
@@ -230,8 +230,8 @@ public class Piece : MonoBehaviour
 
             float midPoint = lowerBound + upperBound / 2;
 
-            if (pieceLocation.z > midPoint) { newZ = lowerBound; }
-            else { newZ = upperBound; }
+            if (pieceLocation.z > midPoint) { newZ = upperBound; }
+            else { newZ = lowerBound; }
         }
     }
 
