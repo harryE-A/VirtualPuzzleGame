@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 
     public void LevelScreen()
     {
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("Level Select"); 
     }
      
     public void Controls()

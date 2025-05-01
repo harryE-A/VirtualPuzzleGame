@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
     {
         string targetFile;
         //Switch helps to reuse code, only difference between saving solution or start is the file destination.
-        //Previously had two methods, SaveStartPuzzle() and SaveSolutionPuzzle()
+        //Previously code split into two methods, SaveStartPuzzle() and SaveSolutionPuzzle()
         switch (s) {
             case saveType.solution:
                 targetFile = "Assets/Puzzles/solutionPos-X.txt";

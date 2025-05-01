@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c149bd0992df6b142a02fa67063b73a6, type: 3}
+  m_Name: Puzzle 105
+  m_EditorClassIdentifier: 
+  puzzleNo: 105
+  puzzleType: 4
+  startFile: {fileID: 4900000, guid: 6d1d608c13d5e954b857e222bfa9fca0, type: 3}
+  solutionFile: {fileID: 0}

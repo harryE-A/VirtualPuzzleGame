@@ -130,7 +130,6 @@ public class Piece : MonoBehaviour
         colliding = true;
 
         //Bug Fix (moving mouse too quickly and stop dragging can allow pieces to be placed inside one another)
-        //NEEDS EDITING WHEN ADDING LOCKING
 
         //Two pieces
         try { 
