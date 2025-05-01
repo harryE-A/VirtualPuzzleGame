@@ -65,13 +65,14 @@ public class Piece : MonoBehaviour
         
     }
 
-    private void OnMouseDrag() //Moves the object being dragged by setting it's position to where the mouse is relative to the camera
+    private void OnMouseDrag() 
     {
         if(!locked)
         {
             dragging = true;
             placed = false;
 
+            //Moves the object being dragged by setting it's position to where the mouse is relative to the camera
             transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos); //This line uses Tutorial Code
 
             //Lock Y Axis so pieces don't clip below the board
@@ -130,7 +131,6 @@ public class Piece : MonoBehaviour
         colliding = true;
 
         //Bug Fix (moving mouse too quickly and stop dragging can allow pieces to be placed inside one another)
-
         //Two pieces
         try { 
             Piece p = collision.gameObject.GetComponent<Piece>(); 

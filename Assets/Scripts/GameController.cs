@@ -42,8 +42,6 @@ public class GameController : MonoBehaviour
     {
         if (startSaveAction.WasPerformedThisFrame()) {SavePuzzle(saveType.start);}
         if (startSolutionAction.WasPerformedThisFrame()) {SavePuzzle(saveType.solution);}
-        //RESET PUZZLE
-
     }
 
     public void SavePuzzle(saveType s)
@@ -116,7 +114,7 @@ public class GameController : MonoBehaviour
     {
         GameObject[] gridPoints = GameObject.FindGameObjectsWithTag("GridPoint");
 
-        foreach (var point in gridPoints)
+        foreach (var point in gridPoints) //Check every grid point
         {
             if (!point.GetComponent<GridPoint>().filled)
             {
@@ -130,7 +128,7 @@ public class GameController : MonoBehaviour
     {
         Puzzle currentPuzzle = puzzles[levelID];
 
-        TMP_Text text = GameObject.Find("Level Text").GetComponent<TMP_Text>();
-        text.text = "Level " + levelID + " - " + currentPuzzle.puzzleType;
+        TMP_Text text = GameObject.Find("Level Text").GetComponent<TMP_Text>(); 
+        text.text = "Level " + levelID + " - " + currentPuzzle.puzzleType; //Get and edit text component
     }
 }
