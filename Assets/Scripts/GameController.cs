@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
         startSolutionAction = InputSystem.actions.FindAction("SaveSolution");
 
         levelID = UIManager.level;
+
         if(levelID != 0)
         {
           LoadPuzzle(levelID);
@@ -77,11 +78,11 @@ public class GameController : MonoBehaviour
 
     public void LoadPuzzle(int levelID)
     {
-        Debug.Log(levelID);
+        Debug.Log("LEVEL ID:" + levelID);
 
         GameObject[] pieces = GameObject.FindGameObjectsWithTag("Piece"); //Get every piece
 
-        string targetFile = "Assets/Puzzles/startPos-" + levelID + ".txt";
+        string targetFile = "Assets/StreamingAssets/Puzzles/startPos-" + levelID + ".txt";
         StreamReader sr = new StreamReader(targetFile);
 
         foreach (var piece in pieces) //For every piece

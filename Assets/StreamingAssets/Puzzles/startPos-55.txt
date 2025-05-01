@@ -1,0 +1,10 @@
+{"pieceId":8,"startPos":{"x":5.0,"y":0.0,"z":-26.0},"pos":{"x":14.0,"y":0.0,"z":-24.0},"q":{"x":0.0,"y":-1.0,"z":0.0,"w":0.0},"isToggled":false,"isLocked":false}
+{"pieceId":1,"startPos":{"x":17.0,"y":0.0,"z":-16.0},"pos":{"x":0.0,"y":0.0,"z":-14.0},"q":{"x":0.0,"y":1.0,"z":0.0,"w":0.0},"isToggled":false,"isLocked":true}
+{"pieceId":9,"startPos":{"x":17.0,"y":0.0,"z":0.0},"pos":{"x":14.0,"y":0.0,"z":4.0},"q":{"x":0.0,"y":1.0,"z":0.0,"w":0.0},"isToggled":false,"isLocked":false}
+{"pieceId":4,"startPos":{"x":11.0,"y":0.0,"z":-27.0},"pos":{"x":14.0,"y":0.0,"z":-16.0},"q":{"x":0.0,"y":0.0,"z":-0.7071068286895752,"w":-0.7071068286895752},"isToggled":true,"isLocked":false}
+{"pieceId":5,"startPos":{"x":4.0,"y":0.0,"z":8.0},"pos":{"x":8.0,"y":0.0,"z":10.0},"q":{"x":0.0,"y":0.0,"z":0.7071068286895752,"w":0.7071068286895752},"isToggled":true,"isLocked":false}
+{"pieceId":3,"startPos":{"x":17.0,"y":0.0,"z":-26.0},"pos":{"x":2.0,"y":0.0,"z":-8.0},"q":{"x":0.5,"y":0.5,"z":-0.5,"w":-0.5},"isToggled":true,"isLocked":true}
+{"pieceId":6,"startPos":{"x":17.0,"y":0.0,"z":-7.0},"pos":{"x":2.0,"y":0.0,"z":-4.0},"q":{"x":0.5,"y":0.5,"z":-0.5,"w":-0.5},"isToggled":true,"isLocked":true}
+{"pieceId":10,"startPos":{"x":0.0,"y":0.0,"z":-26.0},"pos":{"x":10.0,"y":0.0,"z":-26.0},"q":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"isToggled":false,"isLocked":false}
+{"pieceId":2,"startPos":{"x":15.0,"y":0.0,"z":11.0},"pos":{"x":4.0,"y":0.0,"z":-18.0},"q":{"x":0.0,"y":-0.7071068286895752,"z":0.0,"w":-0.7071068286895752},"isToggled":false,"isLocked":true}
+{"pieceId":7,"startPos":{"x":9.0,"y":0.0,"z":9.0},"pos":{"x":14.0,"y":0.0,"z":-8.0},"q":{"x":0.0,"y":1.0,"z":0.0,"w":0.0},"isToggled":false,"isLocked":false}
