@@ -9,6 +9,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class GameController : MonoBehaviour
     [SerializeField] public GameObject victoryText;
     //Text to be displayed to give the player some help
     [SerializeField] public GameObject helpMessage;
+
+    //Background object references for enabling/disabling
+    [SerializeField] public GameObject[] background;
 
     int levelID; //The current level
 
@@ -56,10 +60,8 @@ public class GameController : MonoBehaviour
             JsonUtility.FromJsonOverwrite(json, pieceToEdit);
             pieceToEdit.Apply();
         }
-
-        SetLevelText();
-
         sr.Close();
+        DecorateLevel(); //Set text and background elements.
     }
 
     private void Update()
@@ -124,11 +126,39 @@ public class GameController : MonoBehaviour
         return true;
     }
 
-    public void SetLevelText()
+    public void DecorateLevel()
     {
         Puzzle currentPuzzle = puzzles[levelID];
 
         TMP_Text text = GameObject.Find("Level Text").GetComponent<TMP_Text>(); 
         text.text = "Level " + levelID + " - " + currentPuzzle.puzzleType; //Get and edit text component
+
+        //Turn all other backgrounds off
+        for(int i = 0; i < background.Length; i++)
+        {
+            background[i].SetActive(false);
+        }
+
+        //Enable background based on puzzle difficulty
+        switch (currentPuzzle.puzzleType) {
+            case PuzzleType.Starter:
+                background[0].SetActive(true);
+                break;
+            case PuzzleType.Junior:
+                background[1].SetActive(true);
+                break;
+            case PuzzleType.Expert:
+                background[2].SetActive(true);
+                break;
+            case PuzzleType.Master:
+                background[2].SetActive(true);
+                break;
+            case PuzzleType.Wizard:
+                background[3].SetActive(true);
+                break;
+        }
+
+        
+
     }
 }
