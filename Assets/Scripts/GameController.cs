@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
@@ -29,13 +30,36 @@ public class GameController : MonoBehaviour
     {
         startSaveAction = InputSystem.actions.FindAction("SaveStart");
         startSolutionAction = InputSystem.actions.FindAction("SaveSolution");
+      
+        LoadFile(); //Load the selected level from the file
+    }
 
-        levelID = UIManager.level;
+    public void LoadFile()
+    {
+        levelID = PlayerPrefs.GetInt("Level"); //Get the level
 
-        if(levelID != 0)
+        string data = "";
+        string filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "Puzzles/startPos-" + levelID + ".txt");
+
+        data = System.IO.File.ReadAllText(filePath);
+        Debug.Log(data);
+
+        GameObject[] pieces = GameObject.FindGameObjectsWithTag("Piece"); //Get every piece
+
+        StringReader sr = new StringReader(data); //Read each line of the larger string
+
+        foreach (var piece in pieces) //For every piece
         {
-          LoadPuzzle(levelID);
+            string json = sr.ReadLine();
+            PiecePos pieceToEdit = piece.GetComponent<PiecePos>();
+
+            JsonUtility.FromJsonOverwrite(json, pieceToEdit);
+            pieceToEdit.Apply();
         }
+
+        SetLevelText();
+
+        sr.Close();
     }
 
     private void Update()
@@ -72,30 +96,6 @@ public class GameController : MonoBehaviour
             sw.WriteLine(JsonUtility.ToJson(p)); //Write to file in JSON
         }
         sw.Close(); //Close Streamwriter
-    }
-
-    public void LoadPuzzle(int levelID)
-    {
-        Debug.Log("LEVEL ID:" + levelID);
-
-        GameObject[] pieces = GameObject.FindGameObjectsWithTag("Piece"); //Get every piece
-
-        string targetFile = "Assets/StreamingAssets/Puzzles/startPos-" + levelID + ".txt";
-        StreamReader sr = new StreamReader(targetFile);
-
-        foreach (var piece in pieces) //For every piece
-        {
-            string json = sr.ReadLine();
-            PiecePos pieceToEdit = piece.GetComponent<PiecePos>();
-
-            JsonUtility.FromJsonOverwrite(json, pieceToEdit);
-            pieceToEdit.Apply();
-
-        }
-
-        sr.Close(); //Close Streamreader
-
-        SetLevelText(); //Set the Canvas text to display level + difficulty
     }
 
     public void CheckPuzzle()

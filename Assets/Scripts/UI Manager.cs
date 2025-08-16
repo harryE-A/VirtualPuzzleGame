@@ -3,9 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-
-    public static int level; //Static so that it retains it's value between scenes.
-
     public void LevelScreen()
     {
         SceneManager.LoadScene("Level Select"); 
@@ -18,7 +15,7 @@ public class UIManager : MonoBehaviour
 
     public void Play(int x)
     {
-        level = x;
+        PlayerPrefs.SetInt("Level", x);
         SceneManager.LoadScene("Game");
     }
 
