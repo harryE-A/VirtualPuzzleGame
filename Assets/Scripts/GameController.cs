@@ -46,7 +46,6 @@ public class GameController : MonoBehaviour
         string filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "Puzzles/startPos-" + levelID + ".txt");
 
         data = System.IO.File.ReadAllText(filePath);
-        Debug.Log(data);
 
         GameObject[] pieces = GameObject.FindGameObjectsWithTag("Piece"); //Get every piece
 
@@ -148,7 +147,7 @@ public class GameController : MonoBehaviour
                 background[1].SetActive(true);
                 break;
             case PuzzleType.Expert:
-                background[2].SetActive(true);
+                background[1].SetActive(true);
                 break;
             case PuzzleType.Master:
                 background[2].SetActive(true);

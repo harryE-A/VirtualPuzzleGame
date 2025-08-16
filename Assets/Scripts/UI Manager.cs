@@ -13,6 +13,11 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Controls");
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void Play(int x)
     {
         PlayerPrefs.SetInt("Level", x);
